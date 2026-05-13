@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>GORDIHO SP</title>
-<meta name="description" content="Biblioteca de apostilas oficiais do Currículo em Ação (SP) e coleções complementares. Visualize e baixe gratuitamente." />
+<title>GORINHO SP</title>
+<meta name="description" content="Biblioteca de apostilas oficiais do Currículo em Ação (SP). Visualize e baixe gratuitamente." />
 <style>
   :root{
     --bg:#2a0606; --bg-2:#1c0404; --fg:#fde9e9; --muted:#e7b8b8;
@@ -44,7 +44,6 @@
   .item .arrow{color:#ff8a8a;opacity:0;transition:.15s}
   .item:hover .arrow{opacity:1}
   footer{border-top:1px solid var(--border);text-align:center;color:var(--muted);font-size:13px;padding:22px}
-  /* viewer */
   .modal{position:fixed;inset:0;background:rgba(10,2,2,.95);z-index:50;display:none;flex-direction:column}
   .modal.open{display:flex}
   .modal header{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:12px 16px;border-bottom:1px solid var(--border);background:var(--bg-2)}
@@ -68,7 +67,6 @@
     </div>
   </div>
 </header>
-
 <main class="wrap" id="catalogo">
   <div class="toolbar">
     <div>
@@ -81,9 +79,7 @@
   <p class="desc" id="catDesc"></p>
   <div id="grid" class="grid"></div>
 </main>
-
 <footer>© 2026 GORDINHO MAIN</footer>
-
 <div class="modal" id="viewer" role="dialog" aria-modal="true">
   <header>
     <h2 id="viewerTitle">Apostila</h2>
@@ -94,7 +90,6 @@
   </header>
   <iframe id="viewerFrame" title="Visualizador"></iframe>
 </div>
-
 <script>
 const R2="https://pub-761ea6e47fa74db3a9b6ffc7656d8e73.r2.dev/OpenFuture";
 const categorias=[
@@ -152,77 +147,11 @@ const categorias=[
    {nome:"Volume 2",apostilas:[
     {t:"História, Física e Inglês",u:R2+"/volume2/3ano/histfisicaingl3anovol2.pdf"},
     {t:"Matemática e Português",u:R2+"/volume2/3ano/matematicaportugues3anovol2.pdf"}]}]}
- ]},
- {id:"spfaz",nome:"São Paulo Faz Escola",desc:"Cadernos do aluno — Português e Matemática",series:[
-  {nome:"Volume 1",volumes:[{nome:"Cadernos",apostilas:[
-   {t:"Matemática",u:R2+"/SP1/livromatematica1.pdf"},{t:"Português",u:R2+"/SP1/livro1.pdf"}]}]},
-  {nome:"Volume 2",volumes:[{nome:"Cadernos",apostilas:[
-   {t:"Matemática",u:R2+"/SP2/livromatematica2.pdf"},{t:"Português",u:R2+"/SP2/livro2.pdf"}]}]},
-  {nome:"Volume 3",volumes:[{nome:"Cadernos",apostilas:[
-   {t:"Português",u:R2+"/SP3/livro3.pdf"},{t:"Matemática",u:R2+"/SP3/livromatematica3.pdf"}]}]}
- ]},
- {id:"mp",nome:"Moderna Plus",desc:"Coleção complementar para o Ensino Médio",series:[
-  {nome:"Português",volumes:[{nome:"Volumes",apostilas:[
-   {t:"Volume 1",u:R2+"/ModernaPlus/MODERNA-PLUS-Portugues-contexto-interlocucao-e-sentido-1-1.pdf"},
-   {t:"Volume 2",u:R2+"/ModernaPlus/MODERNA-PLUS-Portugues-contexto-interlocucao-e-sentido-2-1.pdf"},
-   {t:"Volume 3",u:R2+"/ModernaPlus/MODERNA-PLUS-Portugues-contexto-interlocucao-e-sentido-3-1.pdf"}]}]},
-  {nome:"Matemática (Paiva)",volumes:[{nome:"Volumes",apostilas:[
-   {t:"Volume 1",u:R2+"/ModernaPlus/Moderna-Plus-Matematica-Paiva-1-1.pdf"},
-   {t:"Volume 2",u:R2+"/ModernaPlus/Moderna-Plus-Matematica-Paiva-2-1.pdf"},
-   {t:"Volume 3",u:R2+"/ModernaPlus/Moderna-Plus-Matematica-Paiva-3-1.pdf"}]}]},
-  {nome:"Demais disciplinas",volumes:[{nome:"Volume único",apostilas:[
-   {t:"Arte",u:R2+"/ModernaPlus/MODERNA-PLUS-Arte-1.pdf"},
-   {t:"Redação",u:R2+"/ModernaPlus/MODERNA-PLUS-Redacao-1.pdf"},
-   {t:"Biologia",u:R2+"/ModernaPlus/Moderna-Plus-Biologia-Amabis-Martho-1.pdf"},
-   {t:"Educação Digital",u:R2+"/ModernaPlus/Moderna-Plus-Educacao-Digital-1.pdf"},
-   {t:"Espanhol",u:R2+"/ModernaPlus/Moderna-Plus-Espanhol-1.pdf"},
-   {t:"Filosofia",u:R2+"/ModernaPlus/Moderna-Plus-Filosofia-1.pdf"},
-   {t:"Física: Ciência e Tecnologia",u:R2+"/ModernaPlus/Moderna-Plus-Fisica-Ciencia-e-Tecnologia-1.pdf"},
-   {t:"Geografia",u:R2+"/ModernaPlus/Moderna-Plus-Geografia-1.pdf"},
-   {t:"História",u:R2+"/ModernaPlus/Moderna-Plus-Historia-1.pdf"},
-   {t:"Inglês",u:R2+"/ModernaPlus/Moderna-Plus-Ingles-1.pdf"},
-   {t:"Química na Abordagem do Cotidiano",u:R2+"/ModernaPlus/Moderna-Plus-Quimica-na-abordagem-do-cotidiano-1.pdf"},
-   {t:"Sociologia em Movimento",u:R2+"/ModernaPlus/Moderna-Plus-Sociologia-em-movimento-1.pdf"}]}]}
- ]},
- {id:"ma",nome:"Moderna em Ação",desc:"Coleção Moderna em Ação",series:[
-  {nome:"Matemática",volumes:[{nome:"Volumes",apostilas:[
-   {t:"Volume 1",u:R2+"/ModernaEmA%C3%A7%C3%A3o/Moderna-em-ACAO-Matematica-1-1.pdf"},
-   {t:"Volume 2",u:R2+"/ModernaEmA%C3%A7%C3%A3o/Moderna-em-ACAO-Matematica-2-1.pdf"}]}]},
-  {nome:"Português",volumes:[{nome:"Volumes",apostilas:[
-   {t:"Volume 1",u:R2+"/ModernaEmA%C3%A7%C3%A3o/Moderna-Em-Acao-Portugues-1-1.pdf"},
-   {t:"Volume 2",u:R2+"/ModernaEmA%C3%A7%C3%A3o/Moderna-Em-Acao-Portugues-2-1.pdf"},
-   {t:"Volume 3",u:R2+"/ModernaEmA%C3%A7%C3%A3o/Moderna-Em-Acao-Portugues-3-1.pdf"}]}]},
-  {nome:"Demais disciplinas",volumes:[{nome:"Volume único",apostilas:[
-   {t:"Artes",u:R2+"/ModernaEmA%C3%A7%C3%A3o/Moderna-Em-Acao-Arte-1.pdf"},
-   {t:"Inglês",u:R2+"/ModernaEmA%C3%A7%C3%A3o/Moderna-em-Acao-Ingles-2.pdf"},
-   {t:"Redação",u:R2+"/ModernaEmA%C3%A7%C3%A3o/Moderna-Em-Acao-Redacao-1.pdf"}]}]}
- ]},
- {id:"sa",nome:"Moderna SuperAção",desc:"Coleção Moderna SuperAção",series:[
-  {nome:"Português (Ormundo)",volumes:[{nome:"Volumes",apostilas:[
-   {t:"Volume 1",u:R2+"/ModernaSuperA%C3%A7%C3%A3o/MODERNA-SuperACAO-Portugues-Ormundo-Siniscalchi-1-1.pdf"},
-   {t:"Volume 2",u:R2+"/ModernaSuperA%C3%A7%C3%A3o/MODERNA-SuperACAO-Portugues-Ormundo-Siniscalchi-2-1.pdf"},
-   {t:"Volume 3",u:R2+"/ModernaSuperA%C3%A7%C3%A3o/MODERNA-SuperACAO-Portugues-Ormundo-Siniscalchi-3-1.pdf"}]}]},
-  {nome:"Matemática",volumes:[{nome:"Volumes",apostilas:[
-   {t:"Volume 1",u:R2+"/ModernaSuperA%C3%A7%C3%A3o/Moderna-SuperACAO-Matematica-1-1.pdf"},
-   {t:"Volume 2",u:R2+"/ModernaSuperA%C3%A7%C3%A3o/Moderna-SuperACAO-Matematica-2-1.pdf"}]}]},
-  {nome:"Demais disciplinas",volumes:[{nome:"Volume único",apostilas:[
-   {t:"Biologia",u:R2+"/ModernaSuperA%C3%A7%C3%A3o/Moderna-SuperAcao-Biologia-1.pdf"},
-   {t:"Química",u:R2+"/ModernaSuperA%C3%A7%C3%A3o/Moderna-SuperAcao-Quimica-2.pdf"},
-   {t:"Artes",u:R2+"/ModernaSuperA%C3%A7%C3%A3o/MODERNA-SuperACAO-Arte-Ormundo-Vilas-Boas-1.pdf"},
-   {t:"Redação",u:R2+"/ModernaSuperA%C3%A7%C3%A3o/MODERNA-SuperACAO-Redacao-Ormundo-Siniscalchi-1.pdf"},
-   {t:"Espanhol",u:R2+"/ModernaSuperA%C3%A7%C3%A3o/Moderna-SuperAcao-Espanhol-1.pdf"},
-   {t:"Filosofia (Cotrim)",u:R2+"/ModernaSuperA%C3%A7%C3%A3o/Moderna-SuperAcao-Filosofia-Cotrim-1.pdf"},
-   {t:"Geografia",u:R2+"/ModernaSuperA%C3%A7%C3%A3o/Moderna-SuperAcao-Geografia-1.pdf"},
-   {t:"História",u:R2+"/ModernaSuperA%C3%A7%C3%A3o/Moderna-SuperAcao-Historia-1.pdf"},
-   {t:"Sociologia",u:R2+"/ModernaSuperA%C3%A7%C3%A3o/Moderna-SuperAcao-Sociologia-1.pdf"},
-   {t:"Educação Física",u:R2+"/ModernaSuperA%C3%A7%C3%A3o/Moderna-Superacao-Educacao-Fisica-1.pdf"}]}]}
  ]}
 ];
-
 let activeId=categorias[0].id, query="";
 const $=s=>document.querySelector(s);
 const tabsEl=$("#tabs"), gridEl=$("#grid"), descEl=$("#catDesc"), qEl=$("#q");
-
 function renderTabs(){
   tabsEl.innerHTML="";
   categorias.forEach(c=>{
