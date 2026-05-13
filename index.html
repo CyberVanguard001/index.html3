@@ -1,0 +1,285 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>GORDIHO SP</title>
+<meta name="description" content="Biblioteca de apostilas oficiais do Currículo em Ação (SP) e coleções complementares. Visualize e baixe gratuitamente." />
+<style>
+  :root{
+    --bg:#2a0606; --bg-2:#1c0404; --fg:#fde9e9; --muted:#e7b8b8;
+    --primary:#ef4444; --primary-2:#b91c1c; --border:rgba(239,68,68,.25);
+    --card:rgba(60,10,10,.55); --card-2:rgba(40,6,6,.55);
+    --radius:14px;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;background:var(--bg);color:var(--fg);font-family:Inter,system-ui,Segoe UI,Roboto,Arial,sans-serif;-webkit-font-smoothing:antialiased}
+  a{color:inherit}
+  header{border-bottom:1px solid var(--border);background:var(--bg)}
+  .wrap{max-width:1100px;margin:0 auto;padding:20px}
+  nav{display:flex;align-items:center;justify-content:space-between}
+  .logo{display:flex;align-items:center;gap:10px;font-weight:700;letter-spacing:.5px}
+  .logo span.badge{display:inline-flex;width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,var(--primary),var(--primary-2));align-items:center;justify-content:center;font-weight:800;color:#fff}
+  .btn{display:inline-block;padding:10px 16px;border-radius:10px;border:1px solid var(--border);background:var(--card);color:var(--fg);text-decoration:none;font-size:14px;cursor:pointer}
+  .btn.primary{background:linear-gradient(135deg,var(--primary),var(--primary-2));border-color:transparent;font-weight:600;box-shadow:0 12px 30px -12px rgba(239,68,68,.5)}
+  .hero{padding:48px 0 56px}
+  .pill{display:inline-block;border:1px solid var(--border);background:rgba(60,10,10,.4);padding:6px 12px;border-radius:999px;font-size:12px;color:var(--muted)}
+  h1{font-size:clamp(34px,5vw,56px);line-height:1.05;margin:18px 0 12px;letter-spacing:-.02em}
+  h1 .accent{color:#ff6b6b}
+  .lede{color:var(--muted);max-width:620px;margin:0 0 22px}
+  .toolbar{display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between;margin:18px 0 14px}
+  input[type=search]{flex:1;min-width:240px;padding:10px 14px;border-radius:10px;border:1px solid var(--border);background:var(--card-2);color:var(--fg);outline:none}
+  input[type=search]::placeholder{color:#caa}
+  .tabs{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0 18px}
+  .tab{padding:8px 14px;border-radius:999px;border:1px solid var(--border);background:var(--card-2);color:var(--muted);cursor:pointer;font-size:13px}
+  .tab.active{background:linear-gradient(135deg,var(--primary),var(--primary-2));color:#fff;border-color:transparent}
+  .desc{color:var(--muted);font-size:14px;margin:0 0 16px}
+  .grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fill,minmax(280px,1fr))}
+  .card{border:1px solid var(--border);border-radius:var(--radius);padding:18px;background:linear-gradient(160deg,var(--card),var(--card-2))}
+  .card h3{margin:0 0 4px;font-size:18px}
+  .card .count{color:var(--muted);font-size:12px}
+  .vol-label{font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:#ff8a8a;margin:14px 0 8px}
+  .item{display:flex;justify-content:space-between;gap:10px;align-items:center;padding:10px 12px;border-radius:10px;background:rgba(255,255,255,.03);border:1px solid transparent;cursor:pointer;width:100%;text-align:left;color:inherit;font:inherit;margin-bottom:6px}
+  .item:hover{border-color:var(--border);background:rgba(239,68,68,.08)}
+  .item .arrow{color:#ff8a8a;opacity:0;transition:.15s}
+  .item:hover .arrow{opacity:1}
+  footer{border-top:1px solid var(--border);text-align:center;color:var(--muted);font-size:13px;padding:22px}
+  /* viewer */
+  .modal{position:fixed;inset:0;background:rgba(10,2,2,.95);z-index:50;display:none;flex-direction:column}
+  .modal.open{display:flex}
+  .modal header{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:12px 16px;border-bottom:1px solid var(--border);background:var(--bg-2)}
+  .modal h2{font-size:15px;margin:0;max-width:60vw;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .modal iframe{flex:1;width:100%;border:0;background:#1a0303}
+  .empty{border:1px dashed var(--border);border-radius:var(--radius);padding:30px;text-align:center;color:var(--muted)}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <nav>
+      <div class="logo"><span class="badge">SP</span> APOSTILA SP</div>
+      <a class="btn" href="#catalogo">Ver apostilas</a>
+    </nav>
+    <div class="hero">
+      <span class="pill">Ensino Fundamental & Médio — Estado de SP</span>
+      <h1>Todo o conhecimento.<br/><span class="accent">Ao seu alcance.</span></h1>
+      <p class="lede">Apostilas organizadas por série e volume.</p>
+      <a class="btn primary" href="#catalogo">Explorar apostilas →</a>
+    </div>
+  </div>
+</header>
+
+<main class="wrap" id="catalogo">
+  <div class="toolbar">
+    <div>
+      <h2 style="margin:0">Apostilas por categoria</h2>
+      <div class="desc">Selecione uma coleção e clique em uma apostila para abrir.</div>
+    </div>
+    <input id="q" type="search" placeholder="Buscar disciplina ou ano…" />
+  </div>
+  <div class="tabs" id="tabs"></div>
+  <p class="desc" id="catDesc"></p>
+  <div id="grid" class="grid"></div>
+</main>
+
+<footer>© 2026 GORDINHO MAIN</footer>
+
+<div class="modal" id="viewer" role="dialog" aria-modal="true">
+  <header>
+    <h2 id="viewerTitle">Apostila</h2>
+    <div style="display:flex;gap:8px">
+      <a id="dl" class="btn" target="_blank" rel="noreferrer">Baixar PDF</a>
+      <button class="btn primary" onclick="closeViewer()">Fechar</button>
+    </div>
+  </header>
+  <iframe id="viewerFrame" title="Visualizador"></iframe>
+</div>
+
+<script>
+const R2="https://pub-761ea6e47fa74db3a9b6ffc7656d8e73.r2.dev/OpenFuture";
+const categorias=[
+ {id:"fundamental",nome:"Ensino Fundamental",desc:"Apostilas do Currículo em Ação — 6º ao 9º ano",series:[
+  {nome:"6º Ano",volumes:[
+   {nome:"Volume 1",apostilas:[
+    {t:"Língua Portuguesa e Matemática",u:R2+"/6ano/Livro%20do%20estudante%20Amarelo.pdf"},
+    {t:"Ciências, História, Geografia, Inglês e Projeto de Vida",u:R2+"/6ano/Livro%20do%20estudante%20Roxo.pdf"}]},
+   {nome:"Volume 2",apostilas:[
+    {t:"Matemática e Língua Portuguesa",u:R2+"/volume2/6ano/matematicaportugues6anovol2.pdf"},
+    {t:"História, Ciências, Geografia, Inglês e Projeto de Vida",u:R2+"/volume2/6ano/histciefeoinglprojeto6anovol2.pdf"}]}]},
+  {nome:"7º Ano",volumes:[
+   {nome:"Volume 1",apostilas:[
+    {t:"Língua Portuguesa e Matemática",u:R2+"/7aano/1502147.pdf"},
+    {t:"Ciências, História, Geografia, Inglês e Projeto de Vida",u:R2+"/7aano/sla2.pdf"}]},
+   {nome:"Volume 2",apostilas:[
+    {t:"História, Ciências, Geografia, Inglês e Projeto de Vida",u:R2+"/volume2/7ano/histciengeoinglprojeto7anovol2.pdf"},
+    {t:"Matemática e Língua Portuguesa",u:R2+"/volume2/7ano/matematicaportugues7anovol2.pdf"}]}]},
+  {nome:"8º Ano",volumes:[
+   {nome:"Volume 1",apostilas:[
+    {t:"Língua Portuguesa e Matemática",u:R2+"/8anno/1502156.pdf"},
+    {t:"Ciências, História, Geografia, Inglês e Projeto de Vida",u:R2+"/8anno/sla3.pdf"}]},
+   {nome:"Volume 2",apostilas:[
+    {t:"História, Ciências, Geografia e Inglês",u:R2+"/volume2/8ano/histciengeoing8anovol2.pdf"},
+    {t:"Matemática, Língua Portuguesa e Projeto de Vida",u:R2+"/volume2/8ano/matematicaportugues8anovol2.pdf"}]}]},
+  {nome:"9º Ano",volumes:[
+   {nome:"Volume 1",apostilas:[
+    {t:"Língua Portuguesa e Matemática",u:R2+"/9anno/1502161.pdf"},
+    {t:"Ciências, História, Geografia, Inglês e Projeto de Vida",u:R2+"/9anno/sla1.pdf"}]},
+   {nome:"Volume 2",apostilas:[
+    {t:"História, Ciências, Geografia, Inglês e Projeto de Vida",u:R2+"/volume2/9ano/histciengeoinglprojeto9anovol2.pdf"},
+    {t:"Matemática e Língua Portuguesa",u:R2+"/volume2/9ano/matematicaportugues9anovol2.pdf"}]}]}
+ ]},
+ {id:"medio",nome:"Ensino Médio",desc:"Apostilas do Currículo em Ação — 1º ao 3º ano",series:[
+  {nome:"1º Ano EM",volumes:[
+   {nome:"Volume 1",apostilas:[
+    {t:"Língua Portuguesa e Matemática",u:R2+"/1anoem/1499971.pdf"},
+    {t:"Biologia, Física, Química, História, Geografia e Inglês",u:R2+"/1anoem/1519510.pdf"}]},
+   {nome:"Volume 2",apostilas:[
+    {t:"Física, Biologia e Química",u:R2+"/volume2/1ano/fisbioloquim1ano2vol.pdf"},
+    {t:"História, Geografia e Inglês",u:R2+"/volume2/1ano/histgeoingl1anovol2.pdf"},
+    {t:"Matemática",u:R2+"/volume2/1ano/matematica1anovol2.pdf"}]}]},
+  {nome:"2º Ano EM",volumes:[
+   {nome:"Volume 1",apostilas:[
+    {t:"Língua Portuguesa e Matemática",u:R2+"/2anoem/1499983.pdf"},
+    {t:"Biologia, Física, Química, História, Geografia e Inglês",u:R2+"/2anoem/1520452.pdf"}]},
+   {nome:"Volume 2",apostilas:[
+    {t:"Física, Biologia e Química",u:R2+"/volume2/2ano/fisbioquim2anovol2.pdf"},
+    {t:"História, Geografia e Inglês",u:R2+"/volume2/2ano/histgeoing2anovol2.pdf"},
+    {t:"Matemática e Português",u:R2+"/volume2/2ano/1607135%20(1).pdf"}]}]},
+  {nome:"3º Ano EM",volumes:[
+   {nome:"Volume 1",apostilas:[
+    {t:"Língua Portuguesa e Matemática",u:R2+"/3anoem/1500111.pdf"},
+    {t:"Biologia, Física, Química, História, Geografia e Inglês",u:R2+"/3anoem/1520469.pdf"}]},
+   {nome:"Volume 2",apostilas:[
+    {t:"História, Física e Inglês",u:R2+"/volume2/3ano/histfisicaingl3anovol2.pdf"},
+    {t:"Matemática e Português",u:R2+"/volume2/3ano/matematicaportugues3anovol2.pdf"}]}]}
+ ]},
+ {id:"spfaz",nome:"São Paulo Faz Escola",desc:"Cadernos do aluno — Português e Matemática",series:[
+  {nome:"Volume 1",volumes:[{nome:"Cadernos",apostilas:[
+   {t:"Matemática",u:R2+"/SP1/livromatematica1.pdf"},{t:"Português",u:R2+"/SP1/livro1.pdf"}]}]},
+  {nome:"Volume 2",volumes:[{nome:"Cadernos",apostilas:[
+   {t:"Matemática",u:R2+"/SP2/livromatematica2.pdf"},{t:"Português",u:R2+"/SP2/livro2.pdf"}]}]},
+  {nome:"Volume 3",volumes:[{nome:"Cadernos",apostilas:[
+   {t:"Português",u:R2+"/SP3/livro3.pdf"},{t:"Matemática",u:R2+"/SP3/livromatematica3.pdf"}]}]}
+ ]},
+ {id:"mp",nome:"Moderna Plus",desc:"Coleção complementar para o Ensino Médio",series:[
+  {nome:"Português",volumes:[{nome:"Volumes",apostilas:[
+   {t:"Volume 1",u:R2+"/ModernaPlus/MODERNA-PLUS-Portugues-contexto-interlocucao-e-sentido-1-1.pdf"},
+   {t:"Volume 2",u:R2+"/ModernaPlus/MODERNA-PLUS-Portugues-contexto-interlocucao-e-sentido-2-1.pdf"},
+   {t:"Volume 3",u:R2+"/ModernaPlus/MODERNA-PLUS-Portugues-contexto-interlocucao-e-sentido-3-1.pdf"}]}]},
+  {nome:"Matemática (Paiva)",volumes:[{nome:"Volumes",apostilas:[
+   {t:"Volume 1",u:R2+"/ModernaPlus/Moderna-Plus-Matematica-Paiva-1-1.pdf"},
+   {t:"Volume 2",u:R2+"/ModernaPlus/Moderna-Plus-Matematica-Paiva-2-1.pdf"},
+   {t:"Volume 3",u:R2+"/ModernaPlus/Moderna-Plus-Matematica-Paiva-3-1.pdf"}]}]},
+  {nome:"Demais disciplinas",volumes:[{nome:"Volume único",apostilas:[
+   {t:"Arte",u:R2+"/ModernaPlus/MODERNA-PLUS-Arte-1.pdf"},
+   {t:"Redação",u:R2+"/ModernaPlus/MODERNA-PLUS-Redacao-1.pdf"},
+   {t:"Biologia",u:R2+"/ModernaPlus/Moderna-Plus-Biologia-Amabis-Martho-1.pdf"},
+   {t:"Educação Digital",u:R2+"/ModernaPlus/Moderna-Plus-Educacao-Digital-1.pdf"},
+   {t:"Espanhol",u:R2+"/ModernaPlus/Moderna-Plus-Espanhol-1.pdf"},
+   {t:"Filosofia",u:R2+"/ModernaPlus/Moderna-Plus-Filosofia-1.pdf"},
+   {t:"Física: Ciência e Tecnologia",u:R2+"/ModernaPlus/Moderna-Plus-Fisica-Ciencia-e-Tecnologia-1.pdf"},
+   {t:"Geografia",u:R2+"/ModernaPlus/Moderna-Plus-Geografia-1.pdf"},
+   {t:"História",u:R2+"/ModernaPlus/Moderna-Plus-Historia-1.pdf"},
+   {t:"Inglês",u:R2+"/ModernaPlus/Moderna-Plus-Ingles-1.pdf"},
+   {t:"Química na Abordagem do Cotidiano",u:R2+"/ModernaPlus/Moderna-Plus-Quimica-na-abordagem-do-cotidiano-1.pdf"},
+   {t:"Sociologia em Movimento",u:R2+"/ModernaPlus/Moderna-Plus-Sociologia-em-movimento-1.pdf"}]}]}
+ ]},
+ {id:"ma",nome:"Moderna em Ação",desc:"Coleção Moderna em Ação",series:[
+  {nome:"Matemática",volumes:[{nome:"Volumes",apostilas:[
+   {t:"Volume 1",u:R2+"/ModernaEmA%C3%A7%C3%A3o/Moderna-em-ACAO-Matematica-1-1.pdf"},
+   {t:"Volume 2",u:R2+"/ModernaEmA%C3%A7%C3%A3o/Moderna-em-ACAO-Matematica-2-1.pdf"}]}]},
+  {nome:"Português",volumes:[{nome:"Volumes",apostilas:[
+   {t:"Volume 1",u:R2+"/ModernaEmA%C3%A7%C3%A3o/Moderna-Em-Acao-Portugues-1-1.pdf"},
+   {t:"Volume 2",u:R2+"/ModernaEmA%C3%A7%C3%A3o/Moderna-Em-Acao-Portugues-2-1.pdf"},
+   {t:"Volume 3",u:R2+"/ModernaEmA%C3%A7%C3%A3o/Moderna-Em-Acao-Portugues-3-1.pdf"}]}]},
+  {nome:"Demais disciplinas",volumes:[{nome:"Volume único",apostilas:[
+   {t:"Artes",u:R2+"/ModernaEmA%C3%A7%C3%A3o/Moderna-Em-Acao-Arte-1.pdf"},
+   {t:"Inglês",u:R2+"/ModernaEmA%C3%A7%C3%A3o/Moderna-em-Acao-Ingles-2.pdf"},
+   {t:"Redação",u:R2+"/ModernaEmA%C3%A7%C3%A3o/Moderna-Em-Acao-Redacao-1.pdf"}]}]}
+ ]},
+ {id:"sa",nome:"Moderna SuperAção",desc:"Coleção Moderna SuperAção",series:[
+  {nome:"Português (Ormundo)",volumes:[{nome:"Volumes",apostilas:[
+   {t:"Volume 1",u:R2+"/ModernaSuperA%C3%A7%C3%A3o/MODERNA-SuperACAO-Portugues-Ormundo-Siniscalchi-1-1.pdf"},
+   {t:"Volume 2",u:R2+"/ModernaSuperA%C3%A7%C3%A3o/MODERNA-SuperACAO-Portugues-Ormundo-Siniscalchi-2-1.pdf"},
+   {t:"Volume 3",u:R2+"/ModernaSuperA%C3%A7%C3%A3o/MODERNA-SuperACAO-Portugues-Ormundo-Siniscalchi-3-1.pdf"}]}]},
+  {nome:"Matemática",volumes:[{nome:"Volumes",apostilas:[
+   {t:"Volume 1",u:R2+"/ModernaSuperA%C3%A7%C3%A3o/Moderna-SuperACAO-Matematica-1-1.pdf"},
+   {t:"Volume 2",u:R2+"/ModernaSuperA%C3%A7%C3%A3o/Moderna-SuperACAO-Matematica-2-1.pdf"}]}]},
+  {nome:"Demais disciplinas",volumes:[{nome:"Volume único",apostilas:[
+   {t:"Biologia",u:R2+"/ModernaSuperA%C3%A7%C3%A3o/Moderna-SuperAcao-Biologia-1.pdf"},
+   {t:"Química",u:R2+"/ModernaSuperA%C3%A7%C3%A3o/Moderna-SuperAcao-Quimica-2.pdf"},
+   {t:"Artes",u:R2+"/ModernaSuperA%C3%A7%C3%A3o/MODERNA-SuperACAO-Arte-Ormundo-Vilas-Boas-1.pdf"},
+   {t:"Redação",u:R2+"/ModernaSuperA%C3%A7%C3%A3o/MODERNA-SuperACAO-Redacao-Ormundo-Siniscalchi-1.pdf"},
+   {t:"Espanhol",u:R2+"/ModernaSuperA%C3%A7%C3%A3o/Moderna-SuperAcao-Espanhol-1.pdf"},
+   {t:"Filosofia (Cotrim)",u:R2+"/ModernaSuperA%C3%A7%C3%A3o/Moderna-SuperAcao-Filosofia-Cotrim-1.pdf"},
+   {t:"Geografia",u:R2+"/ModernaSuperA%C3%A7%C3%A3o/Moderna-SuperAcao-Geografia-1.pdf"},
+   {t:"História",u:R2+"/ModernaSuperA%C3%A7%C3%A3o/Moderna-SuperAcao-Historia-1.pdf"},
+   {t:"Sociologia",u:R2+"/ModernaSuperA%C3%A7%C3%A3o/Moderna-SuperAcao-Sociologia-1.pdf"},
+   {t:"Educação Física",u:R2+"/ModernaSuperA%C3%A7%C3%A3o/Moderna-Superacao-Educacao-Fisica-1.pdf"}]}]}
+ ]}
+];
+
+let activeId=categorias[0].id, query="";
+const $=s=>document.querySelector(s);
+const tabsEl=$("#tabs"), gridEl=$("#grid"), descEl=$("#catDesc"), qEl=$("#q");
+
+function renderTabs(){
+  tabsEl.innerHTML="";
+  categorias.forEach(c=>{
+    const b=document.createElement("button");
+    b.className="tab"+(c.id===activeId?" active":"");
+    b.textContent=c.nome;
+    b.onclick=()=>{activeId=c.id;render()};
+    tabsEl.appendChild(b);
+  });
+}
+function filterCat(c){
+  if(!query.trim())return c.series;
+  const q=query.toLowerCase();
+  return c.series.map(s=>({...s,volumes:s.volumes.map(v=>({...v,apostilas:v.apostilas.filter(a=>a.t.toLowerCase().includes(q)||s.nome.toLowerCase().includes(q))})).filter(v=>v.apostilas.length)})).filter(s=>s.volumes.length);
+}
+function render(){
+  renderTabs();
+  const c=categorias.find(x=>x.id===activeId);
+  descEl.textContent=c.desc;
+  const series=filterCat(c);
+  gridEl.innerHTML="";
+  if(!series.length){
+    gridEl.innerHTML='<div class="empty">Nenhuma apostila encontrada para "'+query.replace(/</g,"&lt;")+'".</div>';
+    return;
+  }
+  series.forEach(s=>{
+    const card=document.createElement("article");
+    card.className="card";
+    const total=s.volumes.reduce((a,v)=>a+v.apostilas.length,0);
+    card.innerHTML='<header style="display:flex;justify-content:space-between;align-items:baseline"><h3>'+s.nome+'</h3><span class="count">'+total+' apostilas</span></header>';
+    s.volumes.forEach(v=>{
+      const lab=document.createElement("div");lab.className="vol-label";lab.textContent=v.nome;card.appendChild(lab);
+      v.apostilas.forEach(a=>{
+        const btn=document.createElement("button");
+        btn.className="item";
+        btn.innerHTML='<span>'+a.t+'</span><span class="arrow">→</span>';
+        btn.onclick=()=>openViewer(a);
+        card.appendChild(btn);
+      });
+    });
+    gridEl.appendChild(card);
+  });
+}
+function openViewer(a){
+  $("#viewerTitle").textContent=a.t;
+  $("#dl").href=a.u;
+  $("#viewerFrame").src=a.u;
+  $("#viewer").classList.add("open");
+  document.body.style.overflow="hidden";
+}
+function closeViewer(){
+  $("#viewer").classList.remove("open");
+  $("#viewerFrame").src="";
+  document.body.style.overflow="";
+}
+qEl.addEventListener("input",e=>{query=e.target.value;render()});
+render();
+</script>
+</body>
+</html>
